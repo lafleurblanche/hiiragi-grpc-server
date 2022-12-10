@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hiiragi;
+option java_package = "net.konohana.sakuya.hiiragi.proto";
+
+// 営業キロ取得サービス
+service HiiragiRWOperatingKiloService {
+  // 営業キロ取得
+  rpc GetHiiragiOperatingKilo(GetHiiragiOperatingKiloRequest) returns (GetHiiragiOperatingKiloResponse);
+}
+// 営業キロ取得リクエスト
+message GetHiiragiOperatingKiloRequest {
+  string hiiragiRWStaCode = 1; // 駅名コード
+}
+// 営業キロ取得レスポンス
+message GetHiiragiOperatingKiloResponse {
+  string hiiragiOperatingKilo = 1; // 営業キロ
+}
